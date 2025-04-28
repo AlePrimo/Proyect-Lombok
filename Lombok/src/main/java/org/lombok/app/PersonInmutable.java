@@ -1,0 +1,39 @@
+package org.lombok.app;
+
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+import lombok.Value;
+
+import java.time.LocalDate;
+
+
+
+// ESTA CLASE REPRESENTA UNA CLASE INMUTABLE , O SEA QUE UNA VEZ QUE SE GENERA EL OBJETO Y LE ASIGNAMOS VALORES
+// A SUS ATRIBUTOS , ESOS VALORES NO DEBEN CAMBIAR(POR EJEMPLO UN OBJETO DE UNA CLASE DTO)
+
+
+
+@Value  //ESTA ANOTACION GENERA UNICAMENTE LOS GETTER, UN CONSTRUCTOR CON TODOS LOS ATRIBUTOS Y  EL ACCESO A LOS MISMOS COMO PRIVADOS Y FINALES
+// DE ESTA MANERA UNA VEZ INSTANCIADO EL OBJETO NO PUEDE MODIFICARSE EL VALOR DE NINGUNO DE SUS ATRIBUTOS.
+
+@RequiredArgsConstructor //ESTA ANOTACION NOS OBLIGA A ENVIAR VALORES PARA LOS ATRIBUTOS MARCADOS COMO FINAL Y LOS QUE TENGAN LA ANOTACION @NonNull
+
+
+
+public class PersonInmutable {
+
+
+    Long id;
+    @NonNull // ANOTACION QUE OBLIGA A QUE ESTE ATRIBUTO NO PUEDA SER NULO
+    String name;
+    String lastName;
+    String email;
+    Integer age;
+    Integer phoneNumber;
+    LocalDate dateOfBirth;
+
+
+
+
+
+}
